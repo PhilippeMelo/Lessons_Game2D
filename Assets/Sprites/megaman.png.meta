@@ -1,0 +1,238 @@
+fileFormatVersion: 2
+guid: a2a980e18d273534595cb9aada961dad
+timeCreated: 1463882257
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: running_1
+    21300002: running_2
+    21300004: running_3
+    21300006: jumping
+    21300008: idle
+    21300010: attack
+    21300012: dead
+    21300014: hit
+    21300016: weapon
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 512
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: running_1
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 169
+        width: 84
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17, y: -19.5}
+        - {x: 29, y: -20.5}
+        - {x: 42, y: -9.5}
+        - {x: 42, y: 13.5}
+        - {x: 41, y: 16.5}
+        - {x: 14, y: 38.5}
+        - {x: -5, y: 38.5}
+        - {x: -8, y: 37.5}
+        - {x: -27, y: 25.5}
+        - {x: -42, y: 15.5}
+        - {x: -42, y: -38.5}
+        - {x: 26, y: -38.5}
+        - {x: 24, y: -29.5}
+        - {x: 16, y: -20.5}
+        - {x: 14, y: -18.5}
+    - name: running_2
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 169
+        width: 56
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7, y: 42}
+        - {x: -28, y: 13}
+        - {x: -28, y: -23}
+        - {x: -26, y: -37}
+        - {x: -18, y: -42}
+        - {x: 12, y: -42}
+        - {x: 28, y: -16}
+        - {x: 28, y: 37}
+        - {x: 20, y: 42}
+    - name: running_3
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 169
+        width: 73
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -1.5, y: 39}
+        - {x: -35.5, y: 6}
+        - {x: -36.5, y: 3}
+        - {x: -36.5, y: -33}
+        - {x: -8.5, y: -39}
+        - {x: 36.5, y: -39}
+        - {x: 36.5, y: 26}
+        - {x: 32.5, y: 39}
+    - name: jumping
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 169
+        width: 91
+        height: 105
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -45.5, y: 52.5}
+        - {x: -45.5, y: 19.5}
+        - {x: -20.5, y: -52.5}
+        - {x: 36.5, y: -52.5}
+        - {x: 45.5, y: -50.5}
+        - {x: 45.5, y: 52.5}
+    - name: idle
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 58
+        width: 73
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 28.5, y: -26}
+        - {x: 36.5, y: -18}
+        - {x: 36.5, y: -2}
+        - {x: 33.5, y: 6}
+        - {x: 22.5, y: 34}
+        - {x: 16.5, y: 42}
+        - {x: -13.5, y: 42}
+        - {x: -26.5, y: 37}
+        - {x: -36.5, y: 17}
+        - {x: -36.5, y: -42}
+        - {x: 36.5, y: -42}
+        - {x: 36.5, y: -32}
+        - {x: 33.5, y: -29}
+    - name: attack
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 58
+        width: 108
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 33, y: 42}
+        - {x: -40, y: 42}
+        - {x: -54, y: 20}
+        - {x: -54, y: -42}
+        - {x: 22, y: -42}
+        - {x: 54, y: -6}
+        - {x: 54, y: 28}
+    - name: dead
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 55
+        width: 56
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 38.5}
+        - {x: -28, y: 29.5}
+        - {x: -28, y: -15.5}
+        - {x: -24, y: -38.5}
+        - {x: 20, y: -38.5}
+        - {x: 28, y: -34.5}
+        - {x: 28, y: 29.5}
+        - {x: 19, y: 38.5}
+    - name: hit
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 51
+        width: 91
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.5, y: 49}
+        - {x: -45.5, y: 21}
+        - {x: -45.5, y: -18}
+        - {x: -21.5, y: -49}
+        - {x: 45.5, y: -49}
+        - {x: 45.5, y: 30}
+        - {x: 14.5, y: 49}
+    - name: weapon
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 17
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
