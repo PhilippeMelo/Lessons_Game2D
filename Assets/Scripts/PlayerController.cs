@@ -7,6 +7,9 @@ public class PlayerController : MonoBehaviour {
 	public float jumpForce = 200;
 	public LayerMask whatIsGround;
 	private Animator anim;
+	public GameObject weaponPrefab;
+	public Transform pointWeapon;
+	public float weaponSpeed = 300;
 
 	[HideInInspector]
 	public bool lookingRight = true;
@@ -14,6 +17,8 @@ public class PlayerController : MonoBehaviour {
 	private Rigidbody2D rb2d;
 	public bool isGrounded = false;
 	private bool jump = false;
+
+	//[HideInInspector]
 	private bool isAttacking = false;
 
 	void Start () {
@@ -55,6 +60,15 @@ public class PlayerController : MonoBehaviour {
 
 		if (isAttacking) {
 			anim.SetTrigger ("attacking");
+
+			GameObject goWeapon = (GameObject) Instantiate (weaponPrefab, pointWeapon.position, Quaternion.identity);
+
+			if (lookingRight){
+				goWeapon.GetComponent<Rigidbody2D>().AddForce(Vector3.right * weaponSpeed);
+			}else{
+				goWeapon.GetComponent<Rigidbody2D>().AddForce(Vector3.left * weaponSpeed);
+			}
+		
 		}
 
 		isAttacking = false;
