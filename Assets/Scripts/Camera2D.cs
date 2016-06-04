@@ -12,7 +12,7 @@ public class Camera2D : MonoBehaviour {
 	public GameObject player;
 	
 	void Start(){
-		player = GameObject.FindGameObjectWithTag("Player");
+		//player = GameObject.FindGameObjectWithTag("Player");
 		smoothTimeY = 0.2f;
 		smoothTimeX = 0.2f;
 		deltaY = 0.4f;

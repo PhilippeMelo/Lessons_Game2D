@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour {
 	public GameObject weaponPrefab;
 	public Transform pointWeapon;
 	public float weaponSpeed = 300;
+	AudioSource audio;
+	public AudioClip[] audioClip;
 
 	[HideInInspector]
 	public bool lookingRight = true;
@@ -18,12 +20,13 @@ public class PlayerController : MonoBehaviour {
 	public bool isGrounded = false;
 	private bool jump = false;
 
-	//[HideInInspector]
+	[HideInInspector]
 	private bool isAttacking = false;
 
 	void Start () {
 		rb2d = GetComponent<Rigidbody2D> ();
 		anim = GetComponent<Animator> ();
+		audio = GetComponent<AudioSource> ();
 	}
 	
 	void Update () {
@@ -54,6 +57,7 @@ public class PlayerController : MonoBehaviour {
 			Flip ();
 
 		if (jump) {
+			PlaySound (0);
 			rb2d.AddForce(new Vector2(0, jumpForce));
 			jump = false;
 		}
@@ -79,5 +83,10 @@ public class PlayerController : MonoBehaviour {
 		Vector3 myScale = transform.localScale;
 		myScale.x *= -1;
 		transform.localScale = myScale;
+	}
+
+	void PlaySound(int id){
+		audio.clip = audioClip [id];
+		audio.Play();
 	}
 }
