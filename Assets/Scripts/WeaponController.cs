@@ -7,7 +7,7 @@ public class WeaponController : MonoBehaviour {
 	private float range = 20f;
 
 	void Start () {
-	
+		beginPos = gameObject.transform.position.x;
 	}
 
 	void Update () {

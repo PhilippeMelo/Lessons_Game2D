@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour {
 		isAttacking = false;
 	}
 
-	void Flip(){
+	public void Flip(){
 		lookingRight = !lookingRight;
 		Vector3 myScale = transform.localScale;
 		myScale.x *= -1;
