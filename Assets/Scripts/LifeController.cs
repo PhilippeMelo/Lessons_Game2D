@@ -17,6 +17,12 @@ public class LifeController : MonoBehaviour {
 	AudioSource audio;
 	public AudioClip[] audioClip;
 
+	private float startLifePoints = 3;
+	public Text messageText;
+	Rigidbody2D rb2d;
+	private bool gameOver;
+	private PlayerController playerController;
+	public GameObject particlesGameOver;
 
 	void Start(){
 		health = startHealth;
@@ -25,6 +31,18 @@ public class LifeController : MonoBehaviour {
 		beginPos = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
 		audio = GetComponent<AudioSource> ();
 		UpdateView ();
+
+		if (SceneManager.GetActiveScene().buildIndex == 0){ //Application.loadedLevel == 0
+			health = startHealth;
+			lifePoints = startLifePoints;
+		}else{
+			health = PlayerPrefs.GetFloat("Health");
+			lifePoints = PlayerPrefs.GetInt("LifePoints");
+		}
+		messageText.text = " ";
+		gameOver = false;
+		rb2d = GetComponent<Rigidbody2D> ();
+		playerController = GetComponent<PlayerController>();
 	}
 
 	void ApplyDamage(float damage){
@@ -39,18 +57,51 @@ public class LifeController : MonoBehaviour {
 			
 			if (health <= 0) {
 				lifePoints--;
-				RestartLevel ();
+
+				if (!gameOver) {
+					if (lifePoints > 0) {
+						RestartLevel ();
+						//Invoke("RestartLevel", 3.0f);
+					} else {
+
+						isGameOver ();
+					}
+				}
+					
 			}
 
-			isDamageable = false;
-			Invoke ("ResetIsDamageable", 1.5f);
+			//if (!gameOver){
+				isDamageable = false;
+				Invoke ("ResetIsDamageable", 1.5f);
+			//}
 		} 
+	}
+
+	void isGameOver(){
+		gameOver = true;
+		gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+		messageText.text = "Game Over";
+		playerController.enabled = false;
+		isDamageable = false;
+
+		//Effect Game Over
+		Instantiate (particlesGameOver, gameObject.transform.position, Quaternion.identity);
+		gameObject.SetActive(false);
+
+		Invoke ("RestartScene", 4.0f);
+	}
+
+	void RestartScene(){
+		SceneManager.LoadScene (0);
 	}
 
 	void RestartLevel(){
 		health = startHealth;
 		UpdateView ();
 		transform.position = beginPos;
+
+		gameOver = false;
+		playerController.enabled = true;
 	}
 
 	void ResetIsDamageable(){
