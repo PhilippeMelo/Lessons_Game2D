@@ -19,7 +19,6 @@ public class LifeController : MonoBehaviour {
 
 	private float startLifePoints = 3;
 	public Text messageText;
-	Rigidbody2D rb2d;
 	private bool gameOver;
 	private PlayerController playerController;
 	public GameObject particlesGameOver;
@@ -32,7 +31,7 @@ public class LifeController : MonoBehaviour {
 		audio = GetComponent<AudioSource> ();
 		UpdateView ();
 
-		if (SceneManager.GetActiveScene().buildIndex == 0){ //Application.loadedLevel == 0
+		if (SceneManager.GetActiveScene().buildIndex == 1){ //Application.loadedLevel == 1
 			health = startHealth;
 			lifePoints = startLifePoints;
 		}else{
@@ -41,7 +40,6 @@ public class LifeController : MonoBehaviour {
 		}
 		messageText.text = " ";
 		gameOver = false;
-		rb2d = GetComponent<Rigidbody2D> ();
 		playerController = GetComponent<PlayerController>();
 	}
 
@@ -78,6 +76,7 @@ public class LifeController : MonoBehaviour {
 	}
 
 	void isGameOver(){
+		UpdateView();
 		gameOver = true;
 		gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
 		messageText.text = "Game Over";
@@ -88,7 +87,7 @@ public class LifeController : MonoBehaviour {
 		Instantiate (particlesGameOver, gameObject.transform.position, Quaternion.identity);
 		gameObject.SetActive(false);
 
-		Invoke ("RestartScene", 4.0f);
+		Invoke ("RestartScene", 5.0f);
 	}
 
 	void RestartScene(){
