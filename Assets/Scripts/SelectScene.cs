@@ -3,6 +3,18 @@ using System.Collections;
 
 public class SelectScene : MonoBehaviour {
 
+    AudioSource audio;
+	public AudioClip[] audioClip;
+
+	void Start(){
+		audio = GetComponent<AudioSource> ();
+	}
+
+    public void PlaySound(int index) {
+        audio.clip = audioClip[index];
+		audio.Play();
+    }
+
     public void Credits()
     {
         StartCoroutine(waitCredits());
@@ -40,7 +52,12 @@ public class SelectScene : MonoBehaviour {
     IEnumerator waitExit()
     {
         yield return new WaitForSeconds(0.3f);
-        Application.Quit();
+
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #else
+            Application.Quit();
+        #endif
     }
 
     IEnumerator waitCredits()
