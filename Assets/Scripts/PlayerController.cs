@@ -5,14 +5,18 @@ public class PlayerController : MonoBehaviour {
 	public Transform groundCheck;
 	public Transform groundCheck2;
 	public float speed = 2.4f;
-	public float jumpForce = 200;
+	public float jumpForce = 340;
 	public LayerMask whatIsGround;
 	private Animator anim;
 	public GameObject weaponPrefab;
 	public Transform pointWeapon;
-	public float weaponSpeed = 300;
+	public float weaponSpeed = 380;
 	AudioSource audio;
 	public AudioClip[] audioClip;
+
+	private float horizontalForceButton = 0;
+	private bool isShooting = false;
+	private float timerAttacking = 0;
 
 	[HideInInspector]
 	public bool lookingRight = true;
@@ -48,7 +52,7 @@ public class PlayerController : MonoBehaviour {
 
 	void move(){
 		
-		float horizontalForceButton = Input.GetAxis ("Horizontal");
+		horizontalForceButton = Input.GetAxis ("Horizontal");
 		anim.SetFloat ("speedHorizontal", Mathf.Abs(horizontalForceButton));
 		rb2d.velocity = new Vector2 (horizontalForceButton * speed, rb2d.velocity.y);
 		isGrounded = (Physics2D.OverlapCircle (groundCheck.position, 0.15f, whatIsGround)) || (Physics2D.OverlapCircle (groundCheck2.position, 0.15f, whatIsGround));
@@ -58,13 +62,12 @@ public class PlayerController : MonoBehaviour {
 			Flip ();
 
 		if (jump) {
-			PlaySound (0);
 			rb2d.AddForce(new Vector2(0, jumpForce));
 			jump = false;
 		}
 
 		if (isAttacking) {
-			anim.SetTrigger ("attacking");
+			timerAttacking = 0.22f;
 
 			GameObject goWeapon = (GameObject) Instantiate (weaponPrefab, pointWeapon.position, Quaternion.identity);
 
@@ -73,10 +76,18 @@ public class PlayerController : MonoBehaviour {
 			}else{
 				goWeapon.GetComponent<Rigidbody2D>().AddForce(Vector3.left * weaponSpeed);
 			}
+			isAttacking = false;
 		
 		}
 
-		isAttacking = false;
+		if (timerAttacking > 0){
+			isShooting = true;
+          	timerAttacking -= Time.deltaTime;
+        }else{
+          	isShooting = false;
+          	timerAttacking = 0f;
+        }
+		anim.SetBool("shotting", isShooting);
 	}
 
 	public void Flip(){
@@ -90,4 +101,11 @@ public class PlayerController : MonoBehaviour {
 		audio.clip = audioClip [id];
 		audio.Play();
 	}
+
+	void OnCollisionEnter2D(Collision2D coll){
+		if(coll.gameObject.tag == "Ground"){
+			PlaySound (0);
+		}
+	}
+
 }
