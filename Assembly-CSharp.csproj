@@ -53,6 +53,9 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Camera2D.cs" />
      <Compile Include="Assets\Scripts\DamageCollision.cs" />
+     <Compile Include="Assets\Scripts\DestroyObject.cs" />
+     <Compile Include="Assets\Scripts\Enemies\Enemy1.cs" />
+     <Compile Include="Assets\Scripts\EnemyCollision.cs" />
      <Compile Include="Assets\Scripts\FlashingParticles.cs" />
      <Compile Include="Assets\Scripts\LifeController.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />

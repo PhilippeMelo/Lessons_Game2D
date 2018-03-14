@@ -10,7 +10,7 @@ public class LifeController : MonoBehaviour {
 	private float maxHealth = 4;
 	public float lifePoints = 3;
 	private Animator anim;
-	private bool isDamageable;
+	public static bool isDamageable;
 	Vector3 beginPos;
 	public Image healthGui;
 	public Text lifePointsText;
@@ -45,7 +45,8 @@ public class LifeController : MonoBehaviour {
 
 	void ApplyDamage(float damage){
 		
-		if (isDamageable){
+		if (isDamageable && damage > 0){
+			PlayerController.knockForce = 0.8f;
 			health -= damage;
 			PlaySound (0);
 			UpdateView ();

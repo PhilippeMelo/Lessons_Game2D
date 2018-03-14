@@ -18,6 +18,9 @@ public class PlayerController : MonoBehaviour {
 	private bool isShooting = false;
 	private float timerAttacking = 0;
 
+	public static bool knockRight = true;
+	public static float knockForce = 0f;
+
 	[HideInInspector]
 	public bool lookingRight = true;
 
@@ -54,7 +57,18 @@ public class PlayerController : MonoBehaviour {
 		
 		horizontalForceButton = Input.GetAxis ("Horizontal");
 		anim.SetFloat ("speedHorizontal", Mathf.Abs(horizontalForceButton));
-		rb2d.velocity = new Vector2 (horizontalForceButton * speed, rb2d.velocity.y);
+
+		if (knockForce <= 0){
+			rb2d.velocity = new Vector2 (horizontalForceButton * speed, rb2d.velocity.y);
+		}else{
+			if(knockRight){
+				rb2d.velocity = new Vector2 (-knockForce * speed, rb2d.velocity.y);
+			}else{
+				rb2d.velocity = new Vector2 (knockForce * speed, rb2d.velocity.y);
+			}
+			knockForce -= Time.deltaTime;
+		}
+
 		isGrounded = (Physics2D.OverlapCircle (groundCheck.position, 0.15f, whatIsGround)) || (Physics2D.OverlapCircle (groundCheck2.position, 0.15f, whatIsGround));
 		anim.SetBool ("grounded", isGrounded);
 
