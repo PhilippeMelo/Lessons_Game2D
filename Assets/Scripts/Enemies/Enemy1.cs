@@ -49,15 +49,19 @@ public class Enemy1 : MonoBehaviour {
 					direction = 1;
 				}
 			}else{
-				if (LifeController.isDamageable){
-					if (other.transform.position.x < transform.position.x){
-						PlayerController.knockRight = true;
-					}else{
-						PlayerController.knockRight = false;
-					}
-					other.SendMessage("ApplyDamage",damage);
-				}
+				DamagePlayer(other);
 			}
+		}
+	}
+
+	void DamagePlayer(Collider2D player){
+		if (LifeController.isDamageable){
+			if (player.transform.position.x < transform.position.x){
+				PlayerController.knockRight = true;
+			}else{
+				PlayerController.knockRight = false;
+			}
+			player.SendMessage("ApplyDamage",damage);
 		}
 	}
 

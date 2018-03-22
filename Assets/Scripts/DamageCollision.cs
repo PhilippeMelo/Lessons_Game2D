@@ -7,19 +7,15 @@ public class DamageCollision : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other){
 		if(other.CompareTag("Player")){
-			other.SendMessage ("ApplyDamage",damage);
+			if (LifeController.isDamageable){
+				if (other.transform.position.x < transform.position.x){
+					PlayerController.knockRight = true;
+				}else{
+					PlayerController.knockRight = false;
+				}
+				other.SendMessage ("ApplyDamage",damage);
+			}
 		}
 	}
 
-	void OnTriggerStay2D(Collider2D other){
-		if(other.CompareTag("Player")){
-			other.SendMessage ("ApplyDamage",damage);
-		}
-	}
-
-	void OnTriggerExit2D(Collider2D other){
-		if(other.CompareTag("Player")){
-			other.SendMessage ("ApplyDamage",damage);
-		}
-	}
 }

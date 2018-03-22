@@ -55,13 +55,16 @@
      <Compile Include="Assets\Scripts\DamageCollision.cs" />
      <Compile Include="Assets\Scripts\DestroyObject.cs" />
      <Compile Include="Assets\Scripts\Enemies\Enemy1.cs" />
+     <Compile Include="Assets\Scripts\Enemies\Enemy2.cs" />
+     <Compile Include="Assets\Scripts\Enemies\Enemy3.cs" />
+     <Compile Include="Assets\Scripts\Enemies\Enemy3Area.cs" />
+     <Compile Include="Assets\Scripts\Enemies\Enemy3Child.cs" />
      <Compile Include="Assets\Scripts\EnemyCollision.cs" />
      <Compile Include="Assets\Scripts\FlashingParticles.cs" />
      <Compile Include="Assets\Scripts\LifeController.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\SelectEvent.cs" />
      <Compile Include="Assets\Scripts\SelectScene.cs" />
-     <Compile Include="Assets\Scripts\WeaponController.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
