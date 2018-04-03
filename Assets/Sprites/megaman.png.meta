@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: a2a980e18d273534595cb9aada961dad
-timeCreated: 1520838292
+timeCreated: 1522463239
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -18,6 +18,9 @@ TextureImporter:
     21300022: runningAttack1
     21300024: runningAttack2
     21300026: runningAttack3
+    21300028: OnStair
+    21300030: OnTopStair
+    21300032: OnStairShooting
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -214,7 +217,7 @@ TextureImporter:
         width: 63
         height: 72
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -228,7 +231,7 @@ TextureImporter:
         width: 87
         height: 90
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -242,7 +245,7 @@ TextureImporter:
         width: 90
         height: 72
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -256,7 +259,7 @@ TextureImporter:
         width: 90
         height: 72
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -270,7 +273,49 @@ TextureImporter:
         width: 90
         height: 72
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: OnStair
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 19
+        width: 48
+        height: 87
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: OnTopStair
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 34
+        width: 48
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: OnStairShooting
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 19
+        width: 72
+        height: 87
+      alignment: 9
+      pivot: {x: 0.33, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

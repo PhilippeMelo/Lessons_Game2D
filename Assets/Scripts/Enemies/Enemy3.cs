@@ -70,7 +70,6 @@ public class Enemy3 : MonoBehaviour {
 	}
 
 	public void Flip(){
-		Debug.Log("Entrou");
 		Vector3 myScale = transform.localScale;
 		myScale.x *= -1;
 		transform.localScale = myScale;

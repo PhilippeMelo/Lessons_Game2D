@@ -63,6 +63,8 @@
      <Compile Include="Assets\Scripts\FlashingParticles.cs" />
      <Compile Include="Assets\Scripts\LifeController.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\Scenarios\Ladder.cs" />
+     <Compile Include="Assets\Scripts\Scenarios\LadderCollider.cs" />
      <Compile Include="Assets\Scripts\SelectEvent.cs" />
      <Compile Include="Assets\Scripts\SelectScene.cs" />
  <Reference Include="UnityEngine.UI">

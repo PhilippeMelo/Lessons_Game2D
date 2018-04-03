@@ -11,8 +11,6 @@ public class PlayerController : MonoBehaviour {
 	public GameObject weaponPrefab;
 	public Transform pointWeapon;
 	public float weaponSpeed = 380;
-	AudioSource audio;
-	public AudioClip[] audioClip;
 
 	private float horizontalForceButton = 0;
 	private bool isShooting = false;
@@ -31,10 +29,20 @@ public class PlayerController : MonoBehaviour {
 	[HideInInspector]
 	private bool isAttacking = false;
 
+	public static bool onLadder = false;
+	public static bool usingLadder = false;
+	public static bool getOffLadder = false;
+	public static bool topLadder = false;
+	public static float verticalForceButton = 0;
+	public static bool playerAboveLadder = false;
+	private bool callFlipOnLadder = true;
+	public static float ladderPositionX = 0;
+	public static float verticalSpeed = 0;
+	public static bool jumpOnLadder = false;
+
 	void Start () {
 		rb2d = GetComponent<Rigidbody2D> ();
 		anim = GetComponent<Animator> ();
-		audio = GetComponent<AudioSource> ();
 	}
 	
 	void Update () {
@@ -49,17 +57,51 @@ public class PlayerController : MonoBehaviour {
 		}
 
 		if (Input.GetButtonDown("Fire1") && !isAttacking){
-			isAttacking = true;
+			if ((usingLadder && Mathf.Abs(verticalForceButton) > 0) == false){
+				isAttacking = true;
+			}
 		}
 	}
 
 	void move(){
+
+		verticalSpeed = rb2d.velocity.y;
+
+		isGrounded = (Physics2D.OverlapCircle (groundCheck.position, 0.005f, whatIsGround)) || (Physics2D.OverlapCircle (groundCheck2.position, 0.005f, whatIsGround));
+		anim.SetBool ("grounded", isGrounded);
 		
 		horizontalForceButton = Input.GetAxis ("Horizontal");
 		anim.SetFloat ("speedHorizontal", Mathf.Abs(horizontalForceButton));
 
+		verticalForceButton = Input.GetAxis ("Vertical");
+		anim.SetBool("usingLadder", usingLadder);
+		anim.SetBool("topLadder", topLadder);
+
+		if(getOffLadder){
+			transform.Translate(0,0.268f,0);
+			verticalForceButton = 0;
+			getOffLadder = false;
+		}
+
+		if (onLadder){
+			PlayerOnLadder();
+		}else{
+			usingLadder = false;
+		}
+
+		if ((horizontalForceButton > 0 && !lookingRight) || (horizontalForceButton < 0 && lookingRight)){
+			if(verticalForceButton == 0 || !usingLadder){
+				Flip ();
+			}
+		}
+
 		if (knockForce <= 0){
-			rb2d.velocity = new Vector2 (horizontalForceButton * speed, rb2d.velocity.y);
+			if (usingLadder){
+				PlayerUsingLadder();
+			}else{
+				rb2d.gravityScale = 1.5f;
+				rb2d.velocity = new Vector2 (horizontalForceButton * speed, rb2d.velocity.y);
+			}
 		}else{
 			if(knockRight){
 				rb2d.velocity = new Vector2 (-knockForce * speed, rb2d.velocity.y);
@@ -68,12 +110,6 @@ public class PlayerController : MonoBehaviour {
 			}
 			knockForce -= Time.deltaTime;
 		}
-
-		isGrounded = (Physics2D.OverlapCircle (groundCheck.position, 0.15f, whatIsGround)) || (Physics2D.OverlapCircle (groundCheck2.position, 0.15f, whatIsGround));
-		anim.SetBool ("grounded", isGrounded);
-
-		if ((horizontalForceButton > 0 && !lookingRight) || (horizontalForceButton < 0 && lookingRight))
-			Flip ();
 
 		if (jump) {
 			rb2d.AddForce(new Vector2(0, jumpForce));
@@ -91,7 +127,6 @@ public class PlayerController : MonoBehaviour {
 				goWeapon.GetComponent<Rigidbody2D>().AddForce(Vector3.left * weaponSpeed);
 			}
 			isAttacking = false;
-		
 		}
 
 		if (timerAttacking > 0){
@@ -111,15 +146,50 @@ public class PlayerController : MonoBehaviour {
 		transform.localScale = myScale;
 	}
 
-	void PlaySound(int id){
-		audio.clip = audioClip [id];
-		audio.Play();
+	void PlayerOnLadder(){
+		if (Input.GetKeyDown(KeyCode.UpArrow) && !playerAboveLadder){
+			
+			usingLadder = true;
+			transform.position = new Vector3(ladderPositionX, transform.position.y, transform.position.z);
+			if (isGrounded){
+				transform.Translate(0,0.07f,0);
+			}
+		}
+		if (Input.GetKeyDown(KeyCode.DownArrow) && playerAboveLadder){
+			transform.Translate(0,-0.318f,0);
+			usingLadder = true;
+			transform.position = new Vector3(ladderPositionX, transform.position.y, transform.position.z);
+		}
 	}
 
-	void OnCollisionEnter2D(Collision2D coll){
-		if(coll.gameObject.tag == "Ground"){
-			PlaySound (0);
+	void PlayerUsingLadder(){
+		horizontalForceButton = 0;
+
+		if (Input.GetButtonDown("Jump")){
+			jumpOnLadder = true;
+			Invoke("ResetJumpOnLadder", 0.4f);
+			usingLadder = false;
 		}
+
+		rb2d.velocity = new Vector2(0,0);
+		rb2d.gravityScale = 0;
+		transform.Translate(0,verticalForceButton * Time.deltaTime * 1.4f,0);
+
+		if (Mathf.Abs(verticalForceButton) > 0){
+			if (callFlipOnLadder){
+				Flip();
+				callFlipOnLadder = false;
+				Invoke("ResetCallFlipOnLadder", 0.25f);
+			}
+		}
+	}
+
+	void ResetJumpOnLadder(){
+		jumpOnLadder = false;
+	}
+
+	void ResetCallFlipOnLadder(){
+		callFlipOnLadder = true;
 	}
 
 }
