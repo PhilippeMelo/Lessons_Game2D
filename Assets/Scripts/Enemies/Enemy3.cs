@@ -12,7 +12,7 @@ public class Enemy3 : MonoBehaviour {
 
 	public bool lookingRight;
 
-	public Transform player;
+	private Transform player;
 	public GameObject weaponPrefab;
 	public GameObject childrenPrefab;
 	public Transform pointWeapon;
@@ -41,6 +41,7 @@ public class Enemy3 : MonoBehaviour {
 		anim = GetComponent<Animator> ();
 		health = 3;
 		isDamageable = true;
+		player = GameObject.FindWithTag("Player").transform;
 	}
 
 	void StandingUp(){
@@ -133,11 +134,8 @@ public class Enemy3 : MonoBehaviour {
 			health -= damage;
 			
 			if (health <= 0) {
-				//Effect Explosion
 				Instantiate (particlesExplosion, gameObject.transform.position, Quaternion.identity);
-				
 				CreateChildren();
-
 				Destroy(gameObject);
 			}
 

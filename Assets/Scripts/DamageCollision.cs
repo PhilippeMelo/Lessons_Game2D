@@ -18,4 +18,10 @@ public class DamageCollision : MonoBehaviour {
 		}
 	}
 
+	void Update () {
+		if(transform.gameObject.tag == "Weapon"){
+			Destroy(gameObject, 5f);
+		}
+	}
+
 }

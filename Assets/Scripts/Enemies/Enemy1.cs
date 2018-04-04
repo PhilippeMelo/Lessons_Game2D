@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy1 : MonoBehaviour {
 
-	public bool idle;
+	public bool idle = true;
 	public float damage;
 	public float speed;
 	private Rigidbody2D rb2d;
@@ -15,7 +15,8 @@ public class Enemy1 : MonoBehaviour {
 	private bool isDamageable;
 	public GameObject explosionEffect;
 
-	// Use this for initialization
+	private GameObject cam;
+
 	void Start () {
 		idle = true;
 		damage = 0;
@@ -25,14 +26,19 @@ public class Enemy1 : MonoBehaviour {
 		direction = 0;
 		health = 5;
 		isDamageable = false;
+		cam = GameObject.FindWithTag("MainCamera");
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		anim.SetBool ("isIdle", idle);
 		rb2d.velocity = new Vector2 (direction * speed, rb2d.velocity.y);
 		if (!idle){
 			isDamageable = true;
+
+			Vector3 viewPos = cam.GetComponent<Camera>().WorldToViewportPoint(transform.position);
+            if (viewPos.x > 2 || viewPos.x < -1 || viewPos.y > 1 || viewPos.y < 0){
+                Destroy(gameObject);
+            }
 		}
 	}
 

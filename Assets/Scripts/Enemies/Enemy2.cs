@@ -7,7 +7,7 @@ public class Enemy2 : MonoBehaviour {
 	public float damage;
 	public bool touchedPlayer;
 	public float speed;
-	public Transform player;
+	private Transform player;
 	public bool moveRight;
 	public bool moveLeft;
 	private float initialPositionY;
@@ -24,7 +24,8 @@ public class Enemy2 : MonoBehaviour {
 	public GameObject particlesExplosion;
 	private bool attacking;
 
-	// Use this for initialization
+	private GameObject cam;
+
 	void Start () {
 		idle = true;
 		damage = 1;
@@ -39,6 +40,9 @@ public class Enemy2 : MonoBehaviour {
 
 		isDamageable = false;
 		attacking = false;
+
+		player = GameObject.FindWithTag("Player").transform;
+		cam = GameObject.FindWithTag("MainCamera");
 	}
 
 	void ApplyDamage(float damage){
@@ -57,7 +61,6 @@ public class Enemy2 : MonoBehaviour {
 		}
 	}
 
-	// Update is called once per frame
 	void Update () {
 
 		anim.SetBool ("idle", idle);
@@ -98,6 +101,11 @@ public class Enemy2 : MonoBehaviour {
 				}else{
 					touchedPlayer = false;
 				}
+			}
+
+			Vector3 viewPos = cam.GetComponent<Camera>().WorldToViewportPoint(transform.position);
+			if (viewPos.x > 1|| viewPos.x < 0 || viewPos.y > 1 || viewPos.y < 0){
+				Destroy(gameObject);
 			}
 		}
 	}

@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\Enemies\Enemy3.cs" />
      <Compile Include="Assets\Scripts\Enemies\Enemy3Area.cs" />
      <Compile Include="Assets\Scripts\Enemies\Enemy3Child.cs" />
+     <Compile Include="Assets\Scripts\Enemies\EnemyCreator.cs" />
      <Compile Include="Assets\Scripts\EnemyCollision.cs" />
      <Compile Include="Assets\Scripts\FlashingParticles.cs" />
      <Compile Include="Assets\Scripts\LifeController.cs" />
