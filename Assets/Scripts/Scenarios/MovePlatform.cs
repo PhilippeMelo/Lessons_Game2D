@@ -7,8 +7,6 @@ public class MovePlatform : MonoBehaviour
     public Transform pos1;
     public Transform pos2;
 
-    public bool isVertical = true;
-
     public float speed;
 
     [SerializeField]
@@ -16,13 +14,14 @@ public class MovePlatform : MonoBehaviour
     [SerializeField]
     private bool hasPlayerContact;
     [SerializeField]
-    private bool isGoingUp;
+    private bool isGoingAhead;
+    public bool downToUp;
 
     // Start is called before the first frame update
     void Start()
     {
         speed = 1.6f;
-        isGoingUp = true;
+        isGoingAhead = true;
         isIdle = true;
     }
 
@@ -31,50 +30,64 @@ public class MovePlatform : MonoBehaviour
     {
         if (hasPlayerContact) isIdle = false;
 
-        if (isVertical) {
-            if (transform.position.y <= pos1.position.y) {
-                isGoingUp = true;
+        if (downToUp)
+            GoDownToUp();
+        else
+            GoUpToDown();
 
-                if (!hasPlayerContact) {
-                    isIdle = true;
-                }
-            }
-        } else {
-            if (transform.position.x >= pos1.position.x) {
-                isGoingUp = true;
 
-                if (!hasPlayerContact) {
-                    isIdle = true;
-                }
+    }
+
+    void GoDownToUp() {
+        if (transform.position.y <= pos1.position.y) {
+            isGoingAhead = true;
+
+            if (!hasPlayerContact) {
+                isIdle = true;
             }
         }
 
         if (!isIdle) {
-            if (isGoingUp) {
-                if (isVertical) {
-                    transform.Translate(0, Time.deltaTime * speed, 0);
-                } else {
-                    transform.Translate(-Time.deltaTime * speed, 0, 0);
-                }
-                
+            if (isGoingAhead) {
+
+                transform.Translate(0, Time.deltaTime * speed, 0);
+               
             } else {
-                if (isVertical) {
-                    transform.Translate(0, -1 * Time.deltaTime * speed, 0);
-                } else {
-                    transform.Translate( Time.deltaTime * speed, 0, 0);
-                }
-                
+
+                transform.Translate(0, -Time.deltaTime * speed, 0);
+               
             }
         }
 
-        if (isVertical) {
-            if (transform.position.y >= pos2.position.y) {
-                isGoingUp = false;
+
+        if (transform.position.y >= pos2.position.y) {
+            isGoingAhead = false;
+        }
+    }
+    void GoUpToDown() {
+        if (transform.position.y >= pos1.position.y) {
+            isGoingAhead = true;
+
+            if (!hasPlayerContact) {
+                isIdle = true;
             }
-        } else {
-            if (transform.position.x <= pos2.position.x) {
-                isGoingUp = false;
+        }
+
+        if (!isIdle) {
+            if (isGoingAhead) {
+
+                transform.Translate(0, -Time.deltaTime * speed, 0);
+               
+            } else {
+
+                transform.Translate(0, Time.deltaTime * speed, 0);
+               
             }
+        }
+
+
+        if (transform.position.y <= pos2.position.y) {
+            isGoingAhead = false;
         }
     }
 

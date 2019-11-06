@@ -39,10 +39,13 @@ public class PlayerController : MonoBehaviour {
 	public static float ladderPositionX = 0;
 	public static float verticalSpeed = 0;
 	public static bool jumpOnLadder = false;
+	private float initialGravityScale;
+	public float limitFallingSpeed;
 
 	void Start () {
-		rb2d = GetComponent<Rigidbody2D> ();
-		anim = GetComponent<Animator> ();
+		rb2d = GetComponent<Rigidbody2D>();
+		anim = GetComponent<Animator>();
+		initialGravityScale = rb2d.gravityScale;
 	}
 	
 	void Update () {
@@ -66,6 +69,9 @@ public class PlayerController : MonoBehaviour {
 	void move(){
 
 		verticalSpeed = rb2d.velocity.y;
+
+		if (verticalSpeed < -limitFallingSpeed)
+			rb2d.velocity = new Vector2(rb2d.velocity.x, -limitFallingSpeed);
 
 		isGrounded = (Physics2D.OverlapCircle (groundCheck.position, 0.005f, whatIsGround)) || (Physics2D.OverlapCircle (groundCheck2.position, 0.005f, whatIsGround));
 		anim.SetBool ("grounded", isGrounded);
@@ -99,7 +105,7 @@ public class PlayerController : MonoBehaviour {
 			if (usingLadder){
 				PlayerUsingLadder();
 			}else{
-				rb2d.gravityScale = 1.5f;
+				rb2d.gravityScale = initialGravityScale;
 				rb2d.velocity = new Vector2 (horizontalForceButton * speed, rb2d.velocity.y);
 			}
 		}else{
@@ -147,7 +153,7 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void PlayerOnLadder(){
-		if (Input.GetKeyDown(KeyCode.UpArrow) && !playerAboveLadder){
+		if (Input.GetKey(KeyCode.UpArrow) && !playerAboveLadder){
 			
 			usingLadder = true;
 			transform.position = new Vector3(ladderPositionX, transform.position.y, transform.position.z);
@@ -155,7 +161,7 @@ public class PlayerController : MonoBehaviour {
 				transform.Translate(0,0.07f,0);
 			}
 		}
-		if (Input.GetKeyDown(KeyCode.DownArrow) && playerAboveLadder){
+		if (Input.GetKey(KeyCode.DownArrow) && playerAboveLadder){
 			transform.Translate(0,-0.318f,0);
 			usingLadder = true;
 			transform.position = new Vector3(ladderPositionX, transform.position.y, transform.position.z);
