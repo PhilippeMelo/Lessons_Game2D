@@ -120,7 +120,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 33
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -188,12 +188,12 @@ TextureImporter:
       name: level_sprites3_0
       rect:
         serializedVersion: 2
-        x: 125
-        y: 810
-        width: 48
-        height: 241
+        x: 354
+        y: 656
+        width: 16
+        height: 81
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -209,12 +209,12 @@ TextureImporter:
       name: level_sprites3_1
       rect:
         serializedVersion: 2
-        x: 194
-        y: 906
-        width: 534
-        height: 145
+        x: 377
+        y: 688
+        width: 178
+        height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -230,12 +230,12 @@ TextureImporter:
       name: level_sprites3_2
       rect:
         serializedVersion: 2
-        x: 803
-        y: 999
-        width: 384
-        height: 48
+        x: 580
+        y: 720
+        width: 128
+        height: 15
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -251,12 +251,12 @@ TextureImporter:
       name: level_sprites3_3
       rect:
         serializedVersion: 2
-        x: 194
-        y: 798
-        width: 96
-        height: 96
+        x: 377
+        y: 652
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -272,12 +272,12 @@ TextureImporter:
       name: level_sprites3_4
       rect:
         serializedVersion: 2
-        x: 320
-        y: 795
-        width: 240
-        height: 96
+        x: 419
+        y: 651
+        width: 80
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -293,12 +293,12 @@ TextureImporter:
       name: level_sprites3_5
       rect:
         serializedVersion: 2
-        x: 584
-        y: 843
-        width: 192
-        height: 48
+        x: 507
+        y: 667
+        width: 64
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -314,12 +314,12 @@ TextureImporter:
       name: level_sprites3_6
       rect:
         serializedVersion: 2
-        x: 857
-        y: 759
-        width: 276
-        height: 240
+        x: 598
+        y: 639
+        width: 92
+        height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -335,12 +335,12 @@ TextureImporter:
       name: level_sprites3_7
       rect:
         serializedVersion: 2
-        x: 128
-        y: 384
-        width: 42
-        height: 408
+        x: 355
+        y: 514
+        width: 14
+        height: 136
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -356,12 +356,12 @@ TextureImporter:
       name: level_sprites3_8
       rect:
         serializedVersion: 2
-        x: 338
-        y: 681
-        width: 192
-        height: 96
+        x: 425
+        y: 613
+        width: 64
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -377,12 +377,12 @@ TextureImporter:
       name: level_sprites3_9
       rect:
         serializedVersion: 2
-        x: 584
-        y: 771
-        width: 144
-        height: 48
+        x: 507
+        y: 643
+        width: 48
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -398,12 +398,12 @@ TextureImporter:
       name: level_sprites3_10
       rect:
         serializedVersion: 2
-        x: 197
-        y: 711
-        width: 72
-        height: 48
+        x: 378
+        y: 623
+        width: 24
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -416,57 +416,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: level_sprites3_11
-      rect:
-        serializedVersion: 2
-        x: 947
-        y: 612
-        width: 6
-        height: 123
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 63305410000000000800000000000000
-      internalID: 21300022
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: level_sprites3_12
-      rect:
-        serializedVersion: 2
-        x: 959
-        y: 612
-        width: 9
-        height: 123
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 83305410000000000800000000000000
-      internalID: 21300024
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: level_sprites3_13
       rect:
         serializedVersion: 2
-        x: 971
-        y: 612
-        width: 48
-        height: 123
+        x: 619
+        y: 590
+        width: 50
+        height: 41
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -479,36 +437,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: level_sprites3_14
-      rect:
-        serializedVersion: 2
-        x: 1028
-        y: 612
-        width: 15
-        height: 123
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c3305410000000000800000000000000
-      internalID: 21300028
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: level_sprites3_15
       rect:
         serializedVersion: 2
-        x: 194
-        y: 609
-        width: 528
-        height: 48
+        x: 377
+        y: 589
+        width: 176
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -524,12 +461,12 @@ TextureImporter:
       name: level_sprites3_16
       rect:
         serializedVersion: 2
-        x: 1115
-        y: 363
-        width: 48
-        height: 303
+        x: 684
+        y: 507
+        width: 16
+        height: 101
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -545,12 +482,12 @@ TextureImporter:
       name: level_sprites3_17
       rect:
         serializedVersion: 2
-        x: 194
-        y: 522
-        width: 606
-        height: 48
+        x: 377
+        y: 560
+        width: 202
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -566,12 +503,12 @@ TextureImporter:
       name: level_sprites3_18
       rect:
         serializedVersion: 2
-        x: 197
-        y: 432
-        width: 144
-        height: 48
+        x: 378
+        y: 530
+        width: 48
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -587,12 +524,12 @@ TextureImporter:
       name: level_sprites3_19
       rect:
         serializedVersion: 2
-        x: 368
-        y: 363
-        width: 720
-        height: 138
+        x: 435
+        y: 507
+        width: 240
+        height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -608,12 +545,12 @@ TextureImporter:
       name: level_sprites3_20
       rect:
         serializedVersion: 2
-        x: 104
-        y: 222
-        width: 288
-        height: 102
+        x: 347
+        y: 460
+        width: 96
+        height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -629,12 +566,12 @@ TextureImporter:
       name: level_sprites3_21
       rect:
         serializedVersion: 2
-        x: 416
-        y: 222
-        width: 288
-        height: 102
+        x: 451
+        y: 460
+        width: 96
+        height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -650,12 +587,12 @@ TextureImporter:
       name: level_sprites3_22
       rect:
         serializedVersion: 2
-        x: 740
-        y: 222
-        width: 479
-        height: 102
+        x: 559
+        y: 460
+        width: 160
+        height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -671,12 +608,12 @@ TextureImporter:
       name: level_sprites3_23
       rect:
         serializedVersion: 2
-        x: 97
-        y: 88
-        width: 241
-        height: 101
+        x: 344
+        y: 415
+        width: 81
+        height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -692,12 +629,12 @@ TextureImporter:
       name: level_sprites3_24
       rect:
         serializedVersion: 2
-        x: 362
-        y: 88
-        width: 192
-        height: 101
+        x: 433
+        y: 415
+        width: 64
+        height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -712,7 +649,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: bfd6ed6a93a084b31a22754700a3d107
     internalID: 0
     vertices: []
     indices: 

@@ -96,7 +96,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 33
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -164,10 +164,10 @@ TextureImporter:
       name: running_1
       rect:
         serializedVersion: 2
-        x: 350
-        y: 247
-        width: 78
-        height: 72
+        x: 376
+        y: 199
+        width: 26
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,10 +185,10 @@ TextureImporter:
       name: running_2
       rect:
         serializedVersion: 2
-        x: 454
-        y: 247
-        width: 78
-        height: 72
+        x: 410
+        y: 199
+        width: 26
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,10 +206,10 @@ TextureImporter:
       name: running_3
       rect:
         serializedVersion: 2
-        x: 554
-        y: 247
-        width: 78
-        height: 72
+        x: 443
+        y: 199
+        width: 26
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,10 +227,10 @@ TextureImporter:
       name: jumping
       rect:
         serializedVersion: 2
-        x: 649
-        y: 247
-        width: 87
-        height: 90
+        x: 476
+        y: 199
+        width: 29
+        height: 30
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,10 +248,10 @@ TextureImporter:
       name: idle1
       rect:
         serializedVersion: 2
-        x: 35
-        y: 247
-        width: 63
-        height: 72
+        x: 272
+        y: 199
+        width: 21
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -269,10 +269,10 @@ TextureImporter:
       name: attack
       rect:
         serializedVersion: 2
-        x: 33
-        y: 139
-        width: 93
-        height: 72
+        x: 271
+        y: 163
+        width: 31
+        height: 24
       alignment: 9
       pivot: {x: 0.34, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -290,10 +290,10 @@ TextureImporter:
       name: hit
       rect:
         serializedVersion: 2
-        x: 489
-        y: 19
-        width: 84
-        height: 84
+        x: 424
+        y: 123
+        width: 28
+        height: 28
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -311,10 +311,10 @@ TextureImporter:
       name: weapon
       rect:
         serializedVersion: 2
-        x: 712
-        y: 21
-        width: 24
-        height: 16
+        x: 497
+        y: 124
+        width: 8
+        height: 6
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -332,10 +332,10 @@ TextureImporter:
       name: idle2
       rect:
         serializedVersion: 2
-        x: 141
-        y: 247
-        width: 63
-        height: 72
+        x: 307
+        y: 199
+        width: 21
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -353,10 +353,10 @@ TextureImporter:
       name: jumpingAttack
       rect:
         serializedVersion: 2
-        x: 530
-        y: 139
-        width: 87
-        height: 90
+        x: 437
+        y: 163
+        width: 29
+        height: 30
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -374,10 +374,10 @@ TextureImporter:
       name: runningAttack1
       rect:
         serializedVersion: 2
-        x: 158
-        y: 138
-        width: 90
-        height: 72
+        x: 313
+        y: 163
+        width: 30
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -395,10 +395,10 @@ TextureImporter:
       name: runningAttack2
       rect:
         serializedVersion: 2
-        x: 276
-        y: 139
-        width: 90
-        height: 72
+        x: 353
+        y: 163
+        width: 30
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -416,10 +416,10 @@ TextureImporter:
       name: runningAttack3
       rect:
         serializedVersion: 2
-        x: 399
-        y: 139
-        width: 90
-        height: 72
+        x: 393
+        y: 162
+        width: 30
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -437,10 +437,10 @@ TextureImporter:
       name: OnStair
       rect:
         serializedVersion: 2
-        x: 39
-        y: 19
-        width: 48
-        height: 87
+        x: 273
+        y: 123
+        width: 16
+        height: 29
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -458,10 +458,10 @@ TextureImporter:
       name: OnTopStair
       rect:
         serializedVersion: 2
-        x: 304
-        y: 34
-        width: 48
-        height: 66
+        x: 361
+        y: 128
+        width: 16
+        height: 22
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -479,10 +479,10 @@ TextureImporter:
       name: OnStairShooting
       rect:
         serializedVersion: 2
-        x: 204
-        y: 19
-        width: 72
-        height: 87
+        x: 328
+        y: 123
+        width: 24
+        height: 29
       alignment: 9
       pivot: {x: 0.33, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
