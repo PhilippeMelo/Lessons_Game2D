@@ -1,28 +1,37 @@
 fileFormatVersion: 2
-guid: 90d94bf28e0945a4688279f9ee7b9de2
+guid: 087ec7e202f85462ea265df4f489f7a0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 21300000
-    second: explosion_0
+      213: 4299695302058953689
+    second: dieExp
   - first:
-      213: 21300002
-    second: explosion_1
+      213: -3479028984331692938
+    second: health_back
   - first:
-      213: 21300004
-    second: explosion_2
+      213: 6159752592510258195
+    second: health_front
   - first:
-      213: 21300006
-    second: explosion_3
+      213: 2216051457789328346
+    second: megaLife
   - first:
-      213: 21300008
-    second: explosion_4
+      213: 2048146988604860407
+    second: exp1
   - first:
-      213: 21300010
-    second: explosion_5
+      213: 2380519958134977718
+    second: exp2
   - first:
-      213: 21300012
-    second: explosion_6
+      213: -7329293728390017627
+    second: exp3
+  - first:
+      213: -3413072111476532810
+    second: exp4
+  - first:
+      213: 4417065076554793717
+    second: exp5
+  - first:
+      213: -2066477450808855571
+    second: exp6
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -52,7 +61,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -66,7 +75,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 50
+  spritePixelsToUnits: 33
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -81,9 +90,9 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -93,9 +102,9 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -105,39 +114,39 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: iPhone
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: explosion_0
+      name: dieExp
       rect:
         serializedVersion: 2
-        x: 8
-        y: 41
-        width: 30
-        height: 30
+        x: 14
+        y: 178
+        width: 28
+        height: 28
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +154,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02305410000000000800000000000000
-      internalID: 21300000
+      spriteID: dd3f00da01b5f4019936ec91a6c2bb62
+      internalID: 4299695302058953689
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion_1
+      name: health_back
       rect:
         serializedVersion: 2
-        x: 47
-        y: 41
-        width: 30
-        height: 30
+        x: 57
+        y: 187
+        width: 7
+        height: 17
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +175,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22305410000000000800000000000000
-      internalID: 21300002
+      spriteID: d0d4c5b1af1ec4dd2a323bda575758c4
+      internalID: -3479028984331692938
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion_2
+      name: health_front
       rect:
         serializedVersion: 2
-        x: 88
-        y: 41
-        width: 30
-        height: 30
+        x: 73
+        y: 187
+        width: 7
+        height: 17
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +196,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42305410000000000800000000000000
-      internalID: 21300004
+      spriteID: aa18b37b6961e421e85d5337cd10f0b8
+      internalID: 6159752592510258195
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion_3
+      name: megaLife
       rect:
         serializedVersion: 2
-        x: 129
-        y: 41
-        width: 30
-        height: 30
+        x: 94
+        y: 191
+        width: 12
+        height: 13
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,18 +217,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62305410000000000800000000000000
-      internalID: 21300006
+      spriteID: d553a8ed6577245689828bd7dfca0129
+      internalID: 2216051457789328346
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion_4
+      name: exp1
       rect:
         serializedVersion: 2
-        x: 171
-        y: 41
+        x: 13
+        y: 218
         width: 30
         height: 30
       alignment: 0
@@ -229,18 +238,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82305410000000000800000000000000
-      internalID: 21300008
+      spriteID: ec6ef09d1f98b45bc85bee6a24e83581
+      internalID: 2048146988604860407
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion_5
+      name: exp2
       rect:
         serializedVersion: 2
-        x: 212
-        y: 41
+        x: 53
+        y: 218
         width: 30
         height: 30
       alignment: 0
@@ -250,8 +259,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2305410000000000800000000000000
-      internalID: 21300010
+      spriteID: d70bf0d09410c4cbcb2eb27370fca461
+      internalID: 2380519958134977718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exp3
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 218
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71cc524e1302d420d976f32218d053d2
+      internalID: -7329293728390017627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exp4
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 218
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 605cb17f42c184c4b80ab590330f7196
+      internalID: -3413072111476532810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exp5
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 218
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 532966d011973410da4ac2ea1502c0cf
+      internalID: 4417065076554793717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exp6
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 218
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54a1739ede52740e4a68605cea569c04
+      internalID: -2066477450808855571
       vertices: []
       indices: 
       edges: []
@@ -259,7 +352,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: ebe779e2e03294a868e4b55e0ba68360
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
