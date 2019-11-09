@@ -5,13 +5,13 @@ public class EnemyCollision : MonoBehaviour {
 
 	public float damage = 1;
 
-	AudioSource audio;
-	public AudioClip audioClip;
 	GameObject cam;
+	public GameObject revertSound;
+	public GameObject weaponSound;
 
 	void Start(){
-		audio = GetComponent<AudioSource> ();
 		cam = GameObject.FindWithTag("MainCamera");
+		Instantiate(weaponSound, transform.position, Quaternion.identity);
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
@@ -22,6 +22,7 @@ public class EnemyCollision : MonoBehaviour {
 		}
 
 		if (other.CompareTag("BlockWeapon")){
+			Instantiate(revertSound, transform.position, Quaternion.identity);
 			Revert();
 		}
     }
@@ -31,7 +32,6 @@ public class EnemyCollision : MonoBehaviour {
 		Vector2 forceInverse = transform.GetComponent<Rigidbody2D>().velocity * -1;
 		Vector2 force = forceInverse + (Vector2.up * value);
 		transform.GetComponent<Rigidbody2D>().velocity = force;
-		PlaySound();
 	}
 
 	void Update () {
@@ -43,10 +43,4 @@ public class EnemyCollision : MonoBehaviour {
 			Destroy(gameObject, 3f);
 		}
 	}
-
-	void PlaySound(){
-		audio.clip = audioClip;
-		audio.Play();
-	}
-
 }

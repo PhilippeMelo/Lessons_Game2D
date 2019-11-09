@@ -43,6 +43,11 @@ public class LifeController : MonoBehaviour {
 		playerController = GetComponent<PlayerController>();
 	}
 
+	void KillPlayer() {
+		isDamageable = true;
+		ApplyDamage(100);
+	}
+
 	void ApplyDamage(float damage){
 		
 		if (isDamageable && damage > 0){

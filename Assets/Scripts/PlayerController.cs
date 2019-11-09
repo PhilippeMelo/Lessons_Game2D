@@ -55,11 +55,11 @@ public class PlayerController : MonoBehaviour {
 
 	void inputCheck (){
 
-		if (Input.GetButtonDown("Jump") && isGrounded){
+		if (Input.GetKeyDown(KeyCode.Z) && isGrounded){
 			jump = true;
 		}
 
-		if (Input.GetButtonDown("Fire1") && !isAttacking){
+		if (Input.GetKeyDown(KeyCode.X) && !isAttacking){
 			if ((usingLadder && Mathf.Abs(verticalForceButton) > 0) == false){
 				isAttacking = true;
 			}

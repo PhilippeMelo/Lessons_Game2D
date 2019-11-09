@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -23,7 +24,7 @@ public class Enemy2 : MonoBehaviour {
 	private bool isDamageable;
 	public GameObject particlesExplosion;
 	private bool attacking;
-
+	public float delayForDamage;
 	private GameObject cam;
 
 	void Start () {
@@ -47,6 +48,9 @@ public class Enemy2 : MonoBehaviour {
 
 	void ApplyDamage(float damage){
 		if (isDamageable && damage > 0){
+			isDamageable = false;
+			Invoke ("ResetIsDamageable", delayForDamage);
+
 			StartCoroutine(FlashingDamage ());
 			health -= damage;
 			
@@ -55,9 +59,6 @@ public class Enemy2 : MonoBehaviour {
 				Instantiate (particlesExplosion, gameObject.transform.position, Quaternion.identity);
 				Destroy(gameObject);
 			}
-
-			isDamageable = false;
-			Invoke ("ResetIsDamageable", 1.2f);
 		}
 	}
 
@@ -78,7 +79,6 @@ public class Enemy2 : MonoBehaviour {
 		}
 
 		if (!idle){
-			isDamageable = true;
 			transform.gameObject.tag = "Enemy";
 
 			if(!touchedPlayer){
@@ -115,8 +115,11 @@ public class Enemy2 : MonoBehaviour {
 	}
 
 	IEnumerator FlashingDamage(){
+
+		int delayForDamageFactor = Convert.ToInt32(delayForDamage); //(int)Math.Round(delayForDamage, 0);
 		int i = 0;
-		while(i<8){
+		while(i < delayForDamageFactor*10)
+		{
 			GetComponent<Renderer>().enabled = false;
 			yield return new WaitForSeconds(0.05f);
 			GetComponent<Renderer>().enabled = true;
@@ -129,6 +132,7 @@ public class Enemy2 : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other){
 		if(other.CompareTag("Player")){
 			if (idle){
+				isDamageable = true;
 				anim.SetBool("wakeup", true);
 				Invoke("DesactiveIdle", 0.5f);
 

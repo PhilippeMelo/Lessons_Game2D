@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -25,7 +26,7 @@ public class Enemy3 : MonoBehaviour {
 	private float damage = 1f;
 
 	public GameObject particlesExplosion;
-
+	public float delayForDamage;
 	//Vectors to use in attack
 	Vector2 rightUp = (Vector2.right + Vector2.up).normalized;
 	Vector2 rightDown = (Vector2.right + Vector2.down).normalized;
@@ -130,6 +131,9 @@ public class Enemy3 : MonoBehaviour {
 	void ApplyDamage(float damage){
 
 		if (isDamageable && damage > 0){
+			isDamageable = false;
+			Invoke ("ResetIsDamageable", delayForDamage);
+
 			StartCoroutine(FlashingDamage ());
 			health -= damage;
 			
@@ -138,9 +142,6 @@ public class Enemy3 : MonoBehaviour {
 				CreateChildren();
 				Destroy(gameObject);
 			}
-
-			isDamageable = false;
-			Invoke ("ResetIsDamageable", 1.2f);
 		}
 	}
 
@@ -159,8 +160,11 @@ public class Enemy3 : MonoBehaviour {
 	}
 
 	IEnumerator FlashingDamage(){
+
+		int delayForDamageFactor = Convert.ToInt32(delayForDamage); //(int)Math.Round(delayForDamage, 0);
 		int i = 0;
-		while(i<8){
+		while(i < delayForDamageFactor*10)
+		{
 			GetComponent<Renderer>().enabled = false;
 			yield return new WaitForSeconds(0.05f);
 			GetComponent<Renderer>().enabled = true;

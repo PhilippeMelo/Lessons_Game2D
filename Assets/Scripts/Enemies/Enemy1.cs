@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,8 +13,10 @@ public class Enemy1 : MonoBehaviour {
 	private Animator anim;
 	public float health;
 
+	[SerializeField]
 	private bool isDamageable;
 	public GameObject explosionEffect;
+	public float delayForDamage;
 
 	private GameObject cam;
 
@@ -33,8 +36,6 @@ public class Enemy1 : MonoBehaviour {
 		anim.SetBool ("isIdle", idle);
 		rb2d.velocity = new Vector2 (direction * speed, rb2d.velocity.y);
 		if (!idle){
-			isDamageable = true;
-
 			Vector3 viewPos = cam.GetComponent<Camera>().WorldToViewportPoint(transform.position);
             if (viewPos.x > 2 || viewPos.x < -1 || viewPos.y > 1 || viewPos.y < 0){
                 Destroy(gameObject);
@@ -46,6 +47,7 @@ public class Enemy1 : MonoBehaviour {
 		if(other.CompareTag("Player")){
 			if (idle){
 				idle = false;
+				isDamageable = true;
 				transform.gameObject.tag = "Enemy";
 				damage = 1;
 
@@ -79,6 +81,9 @@ public class Enemy1 : MonoBehaviour {
 	
 	void ApplyDamage(float damage){
 		if (isDamageable && damage > 0){
+			isDamageable = false;
+			Invoke ("ResetIsDamageable", delayForDamage);
+
 			StartCoroutine(FlashingDamage ());
 			health -= damage;
 			
@@ -87,9 +92,6 @@ public class Enemy1 : MonoBehaviour {
 				Instantiate (explosionEffect, gameObject.transform.position, Quaternion.identity);
 				Destroy(gameObject);
 			}
-
-			isDamageable = false;
-			Invoke ("ResetIsDamageable", 1.2f);
 		}
 	}
 
@@ -98,8 +100,11 @@ public class Enemy1 : MonoBehaviour {
 	}
 
 	IEnumerator FlashingDamage(){
+
+		int delayForDamageFactor = Convert.ToInt32(delayForDamage); //(int)Math.Round(delayForDamage, 0);
 		int i = 0;
-		while(i<8){
+		while(i < delayForDamageFactor*10)
+		{
 			GetComponent<Renderer>().enabled = false;
 			yield return new WaitForSeconds(0.05f);
 			GetComponent<Renderer>().enabled = true;
