@@ -9,7 +9,7 @@ public class Enemy3 : MonoBehaviour {
 	private bool standingDown;
 
 	private bool attacking;
-	public static bool canAttack;
+	public bool canAttack;
 
 	public bool lookingRight;
 
