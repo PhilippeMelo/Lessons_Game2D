@@ -22,6 +22,7 @@ public class LifeController : MonoBehaviour {
 	private bool gameOver;
 	private PlayerController playerController;
 	public GameObject particlesGameOver;
+	private bool canKill = true;
 
 	void Start(){
 		health = startHealth;
@@ -44,13 +45,25 @@ public class LifeController : MonoBehaviour {
 	}
 
 	void KillPlayer() {
-		isDamageable = true;
-		ApplyDamage(100);
+		if (canKill) {
+			canKill = false;
+			isDamageable = true;
+			ApplyDamage(100);
+			Invoke("ResetCanKill", 0.1f);
+		}
+	}
+
+	void ResetCanKill()
+	{
+		canKill = true;
 	}
 
 	void ApplyDamage(float damage){
 		
 		if (isDamageable && damage > 0){
+			isDamageable = false;
+			Invoke ("ResetIsDamageable", 1.5f);
+
 			PlayerController.knockForce = 0.8f;
 			health -= damage;
 			PlaySound (0);
@@ -71,15 +84,19 @@ public class LifeController : MonoBehaviour {
 						isGameOver ();
 					}
 				}
-					
 			}
-
 			//if (!gameOver){
-				isDamageable = false;
-				Invoke ("ResetIsDamageable", 1.5f);
 			//}
 		} 
 	}
+
+	public void Charge(int value)
+	{
+		if (health < 4) health += value;
+		if (health  > 4) health = 4;
+		UpdateView();
+	}
+
 
 	void isGameOver(){
 		UpdateView();
@@ -107,6 +124,8 @@ public class LifeController : MonoBehaviour {
 
 		gameOver = false;
 		playerController.enabled = true;
+		PlayerController.knockForce = 0;
+		//canKill = true;
 	}
 
 	void ResetIsDamageable(){
@@ -134,5 +153,12 @@ public class LifeController : MonoBehaviour {
 	void PlaySound(int id){
 		audio.clip = audioClip [id];
 		audio.Play();
+	}
+
+	private void OnTriggerEnter2D(Collider2D other) {
+		if (other.CompareTag("CheckPoint"))
+		{
+			beginPos = new Vector3(other.transform.position.x, other.transform.position.y, 0);
+		}
 	}
 }

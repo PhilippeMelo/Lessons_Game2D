@@ -11,14 +11,15 @@ public class DamageCollision : MonoBehaviour {
 		if(other.CompareTag("Player"))
 		{
 			if (isToKill) other.SendMessage ("KillPlayer");
-
-			if (LifeController.isDamageable){
-				if (other.transform.position.x < transform.position.x){
-					PlayerController.knockRight = true;
-				}else{
-					PlayerController.knockRight = false;
+			else {
+				if (LifeController.isDamageable){
+					if (other.transform.position.x < transform.position.x){
+						PlayerController.knockRight = true;
+					}else{
+						PlayerController.knockRight = false;
+					}
+					other.SendMessage ("ApplyDamage",damage);
 				}
-				other.SendMessage ("ApplyDamage",damage);
 			}
 		}
 	}

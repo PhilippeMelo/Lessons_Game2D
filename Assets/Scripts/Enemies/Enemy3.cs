@@ -150,9 +150,9 @@ public class Enemy3 : MonoBehaviour {
 		GameObject child1 = (GameObject) Instantiate (childrenPrefab, pos, Quaternion.identity);
 		GameObject child2 = (GameObject) Instantiate (childrenPrefab, pos, Quaternion.identity);
 		GameObject child3 = (GameObject) Instantiate (childrenPrefab, pos, Quaternion.identity);
-		child1.GetComponent<Enemy3Child>().speed = -25;
-		child2.GetComponent<Enemy3Child>().speed = 0;
-		child3.GetComponent<Enemy3Child>().speed = 25;
+		child1.GetComponent<Enemy3Child>().speed = -35;
+		child2.GetComponent<Enemy3Child>().speed = -10;
+		child3.GetComponent<Enemy3Child>().speed = 35;
 	}
 
 	void ResetIsDamageable(){

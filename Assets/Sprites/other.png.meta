@@ -32,6 +32,12 @@ TextureImporter:
   - first:
       213: -2066477450808855571
     second: exp6
+  - first:
+      213: 3704025654264093387
+    second: charger
+  - first:
+      213: 6632116737580415328
+    second: charger_inverse
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -345,6 +351,48 @@ TextureImporter:
       bones: []
       spriteID: 54a1739ede52740e4a68605cea569c04
       internalID: -2066477450808855571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charger
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 195
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 952c7f992600c4af480ec13b2492aed2
+      internalID: 3704025654264093387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charger_inverse
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 195
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b35539aaf72749d2984ccaef079aa12
+      internalID: 6632116737580415328
       vertices: []
       indices: 
       edges: []
