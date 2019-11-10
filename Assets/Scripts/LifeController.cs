@@ -17,12 +17,14 @@ public class LifeController : MonoBehaviour {
 	AudioSource audio;
 	public AudioClip[] audioClip;
 
-	private float startLifePoints = 3;
+	private float startLifePoints = 4;
 	public Text messageText;
 	private bool gameOver;
 	private PlayerController playerController;
 	public GameObject particlesGameOver;
 	private bool canKill = true;
+
+	private bool isDead = false;
 
 	void Start(){
 		health = startHealth;
@@ -77,8 +79,10 @@ public class LifeController : MonoBehaviour {
 
 				if (!gameOver) {
 					if (lifePoints > 0) {
-						RestartLevel ();
-						//Invoke("RestartLevel", 3.0f);
+						GameObject.Find("Camera").SendMessage("OpenFade");
+						isDead = true;
+						FreezeGame();
+						Invoke("RestartLevel", 0.2f);
 					} else {
 
 						isGameOver ();
@@ -123,25 +127,47 @@ public class LifeController : MonoBehaviour {
 		transform.position = beginPos;
 
 		gameOver = false;
+		UnFreezeGame();
+		isDead = false;
+		//canKill = true;
+	}
+
+	void FreezeGame()
+	{
+		GetComponent<Renderer>().enabled = false;
+		GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+		playerController.enabled = false;
+		PlayerController.knockForce = 0;
+	}
+
+	void UnFreezeGame()
+	{
+		GetComponent<Renderer>().enabled = true;
+		GetComponent<Rigidbody2D>().constraints = playerController.initialConstraints;
 		playerController.enabled = true;
 		PlayerController.knockForce = 0;
-		//canKill = true;
 	}
 
 	void ResetIsDamageable(){
 		isDamageable = true;
 	}
 
-	IEnumerator FlashingDamage(){
-		int i = 0;
-		while(i<5){
-			GetComponent<Renderer>().enabled = true;
-			yield return new WaitForSeconds(0.1f);
+	IEnumerator FlashingDamage()
+	{
+		if (isDead)
+		{
 			GetComponent<Renderer>().enabled = false;
-			yield return new WaitForSeconds(0.1f);
-			i++;
+		} else {
+			int i = 0;
+			while(i<5){
+				GetComponent<Renderer>().enabled = true;
+				yield return new WaitForSeconds(0.1f);
+				GetComponent<Renderer>().enabled = false;
+				yield return new WaitForSeconds(0.1f);
+				i++;
+			}
+			GetComponent<Renderer>().enabled = true;
 		}
-		GetComponent<Renderer>().enabled = true;
 	}
 
 	void UpdateView(){

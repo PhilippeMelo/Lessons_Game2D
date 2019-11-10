@@ -10,14 +10,27 @@ public class Camera2D : MonoBehaviour {
 	public float deltaY = 0.4f;
 	
 	public GameObject player;
+	public bool fireFade = false;
 	
 	void Start(){
+		transform.position = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
 		//player = GameObject.FindGameObjectWithTag("Player");
 	}
 	
 	void Update(){
 		if (player.transform.parent != null)
 			Movement();
+	}
+
+	public void OpenFade()
+	{
+		transform.GetChild(0).GetComponent<Animator>().SetBool("fireFade", true);
+		Invoke("CloseFade", 1);
+	}
+
+	public void CloseFade()
+	{
+		transform.GetChild(0).GetComponent<Animator>().SetBool("fireFade", false);
 	}
 
 	void FixedUpdate() {

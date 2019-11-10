@@ -39,13 +39,18 @@ public class PlayerController : MonoBehaviour {
 	public static float ladderPositionX = 0;
 	public static float verticalSpeed = 0;
 	public static bool jumpOnLadder = false;
-	private float initialGravityScale;
+	public float initialGravityScale;
+	public float initialMass;
+	public RigidbodyConstraints2D initialConstraints;
 	public float limitFallingSpeed;
 
 	void Start () {
 		rb2d = GetComponent<Rigidbody2D>();
 		anim = GetComponent<Animator>();
 		initialGravityScale = rb2d.gravityScale;
+		initialMass = rb2d.mass;
+		initialConstraints = rb2d.constraints;
+		knockForce = 0;
 	}
 	
 	void Update () {
@@ -55,7 +60,7 @@ public class PlayerController : MonoBehaviour {
 
 	void inputCheck (){
 
-		if (Input.GetKeyDown(KeyCode.Z) && isGrounded){
+		if (Input.GetButtonDown("Jump") && isGrounded){
 			jump = true;
 		}
 
