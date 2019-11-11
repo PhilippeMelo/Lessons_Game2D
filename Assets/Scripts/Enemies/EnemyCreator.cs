@@ -18,7 +18,7 @@ public class EnemyCreator : MonoBehaviour {
     void Update(){
         Vector3 viewPosCreator = cam.GetComponent<Camera>().WorldToViewportPoint(transform.position);
 
-        if (viewPosCreator.x > 1 || viewPosCreator.x < 0 || viewPosCreator.y > 1 || viewPosCreator.y < 0){
+        if (viewPosCreator.x > 1 || viewPosCreator.x < -1 || viewPosCreator.y > 1 || viewPosCreator.y < -1){
             creatorOutsideOfCamera = true;
         }else{
             creatorOutsideOfCamera = false;

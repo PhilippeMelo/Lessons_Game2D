@@ -38,6 +38,12 @@ TextureImporter:
   - first:
       213: 6632116737580415328
     second: charger_inverse
+  - first:
+      213: -2714685862835577045
+    second: cloud1
+  - first:
+      213: -7918464076687501179
+    second: cloud2
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -364,7 +370,7 @@ TextureImporter:
         width: 8
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -385,7 +391,7 @@ TextureImporter:
         width: 8
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -393,6 +399,48 @@ TextureImporter:
       bones: []
       spriteID: 1b35539aaf72749d2984ccaef079aa12
       internalID: 6632116737580415328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cloud1
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 187
+        width: 40
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17095b81de83b45cf8f1412c678d0608
+      internalID: -2714685862835577045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cloud2
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 187
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0816b404ff3c54f38898ca7a2d9278b5
+      internalID: -7918464076687501179
       vertices: []
       indices: 
       edges: []
