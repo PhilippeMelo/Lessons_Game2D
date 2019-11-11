@@ -186,5 +186,10 @@ public class LifeController : MonoBehaviour {
 		{
 			beginPos = new Vector3(other.transform.position.x, other.transform.position.y, 0);
 		}
+
+		if (other.CompareTag("FinishLevel"))
+		{
+			GameObject.Find("Canvas").GetComponent<PauseMenu>().finishedLevel = true;
+		}
 	}
 }
