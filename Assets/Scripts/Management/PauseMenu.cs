@@ -11,10 +11,13 @@ public class PauseMenu : MonoBehaviour {
 	private bool paused;
     private bool resign;
     public bool finishedLevel;
+    private GameObject defaultSelectedButton;
+    public GameObject finishedSelectedButton;
 
 	void Start () {
 		paused = resign = false;
         selectScene = GameObject.Find("Canvas").GetComponent<SelectScene>();
+        defaultSelectedButton = GetComponent<SelectEvent>().selectedObject;
 	}
 	
 	void Update () {
@@ -36,7 +39,14 @@ public class PauseMenu : MonoBehaviour {
 
             if (paused) pauseScreen.SetActive(true); else pauseScreen.SetActive(false);
 
-            if (finishedLevel) finishedLevelScreen.SetActive(true); else finishedLevelScreen.SetActive(false);
+            if (finishedLevel)
+            {
+                GetComponent<SelectEvent>().selectedObject = finishedSelectedButton;
+                finishedLevelScreen.SetActive(true);
+            }  else {
+                GetComponent<SelectEvent>().selectedObject = defaultSelectedButton;
+                finishedLevelScreen.SetActive(false);
+            }
 
         } else {
             blackoutBack.SetActive(true);
