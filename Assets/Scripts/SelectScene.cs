@@ -15,9 +15,13 @@ public class SelectScene : MonoBehaviour {
 		audio.Play();
     }
 
-    public void Credits()
+    public static void OpenScene(string scene)
     {
-        StartCoroutine(waitCredits());
+        if (scene == "exit")
+            ExitGame();
+        else {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(scene);
+        }
     }
 
     public void Play()
@@ -53,16 +57,14 @@ public class SelectScene : MonoBehaviour {
     {
         yield return new WaitForSeconds(0.3f);
 
+    }
+
+    public static void ExitGame()
+    {
         #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
         #else
             Application.Quit();
         #endif
-    }
-
-    IEnumerator waitCredits()
-    {
-        yield return new WaitForSeconds(0.3f);
-        UnityEngine.SceneManagement.SceneManager.LoadScene("credits");
     }
 }

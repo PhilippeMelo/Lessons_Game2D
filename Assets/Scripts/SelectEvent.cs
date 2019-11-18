@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class SelectEvent: MonoBehaviour, IPointerEnterHandler{ // required interface when using the OnPointerEnter method.
+public class SelectEvent: MonoBehaviour, IPointerEnterHandler { // required interface when using the OnPointerEnter method.
 
 	public EventSystem eventSystem;
 	public GameObject selectedObject;
@@ -18,19 +18,23 @@ public class SelectEvent: MonoBehaviour, IPointerEnterHandler{ // required inter
 		eventSystem.SetSelectedGameObject(selectedObject);
     }
 
-	void Start () {
+	void Start () 
+	{
 		eventSystem.SetSelectedGameObject(selectedObject);
 		buttonSelected = true;
 	}
 	
-	void Update () {
-		if (Input.GetAxisRaw("Vertical") != 0 && !buttonSelected){
+	void Update () 
+	{
+		if (Input.GetAxisRaw("Vertical") != 0 && !buttonSelected)
+		{
 			eventSystem.SetSelectedGameObject(selectedObject);
 			buttonSelected = true;
 		}
 	}
 
-	private void OnDisable(){
+	private void OnDisable()
+	{
 		buttonSelected = false;
 	}
 }

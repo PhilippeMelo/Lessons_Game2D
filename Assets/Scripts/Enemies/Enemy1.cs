@@ -27,7 +27,7 @@ public class Enemy1 : MonoBehaviour {
 		rb2d = GetComponent<Rigidbody2D> ();
 		anim = GetComponent<Animator> ();
 		direction = 0;
-		health = 5;
+		health = 3;
 		isDamageable = false;
 		cam = GameObject.FindWithTag("MainCamera");
 	}
