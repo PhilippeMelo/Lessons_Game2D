@@ -55,14 +55,16 @@ public class PauseMenu : MonoBehaviour {
     public void Pause()
     {
         Time.timeScale = 0;
-        AudioListener.volume = 0.3f;
+        GameObject.Find("Camera").GetComponent<AudioSource>().volume = 0.05f;
+        //AudioListener.volume = 0.3f;
         GetComponent<MenuButtonController>().maxIndex = 1;
     }
 
     public void UnPause()
     {
         Time.timeScale = 1;
-        AudioListener.volume = 1;
+        //AudioListener.volume = 1;
+        GameObject.Find("Camera").GetComponent<AudioSource>().volume = 0.3f;
     }
 
 	public void Return()
