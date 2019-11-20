@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour {
 			jump = true;
 		}
 
-		if (Input.GetKeyDown(KeyCode.Z) && !isAttacking){
+		if ((Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.Z)) && !isAttacking){
 			if ((usingLadder && Mathf.Abs(verticalForceButton) > 0) == false){
 				isAttacking = true;
 			}
